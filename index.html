@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charisse Ayaoan Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <ul>
+      <li><a class="nav-link" href="#welcome-section">Home</a></li>
+      <li><a class="nav-link" href="#about">About</a></li>
+      <li><a class="nav-link" href="#skills">Skills</a></li>
+      <li><a class="nav-link" href="#projects">Projects</a></li>
+      <li><a class="nav-link" href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Welcome Section -->
+  <section id="welcome-section">
+    <h1>Hi, I'm Charisse Ayaoan</h1>
+    <p>BSIT Student | Web Development Track</p>
+    <a class="cta" href="#projects">View My Work</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm a passionate BSIT student specializing in Web Development. I love creating beautiful, responsive websites and web applications using modern technologies like HTML, CSS, and JavaScript.</p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+      <div class="skill">HTML5</div>
+      <div class="skill">CSS3</div>
+      <div class="skill">SQL</div>
+      <div class="skill">PHP</div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <a class="project-tile" href="https://codepen.io/charisse/pen/example1" target="_blank">
+        <img src="https://via.placeholder.com/300x180" alt="Project 1">
+        <h3>Portfolio Website</h3>
+        <p>My personal portfolio website showcasing my work.</p>
+      </a>
+      <a class="project-tile" href="https://codepen.io/charisse/pen/example2" target="_blank">
+        <img src="https://via.placeholder.com/300x180" alt="Project 2">
+        <h3>Landing Page</h3>
+        <p>A responsive landing page for a fictional product.</p>
+      </a>
+      <a class="project-tile" href="https://codepen.io/charisse/pen/example3" target="_blank">
+        <img src="https://via.placeholder.com/300x180" alt="Project 3">
+        <h3>To-Do App</h3>
+        <p>A simple JavaScript to-do application with local storage.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Feel free to connect with me:</p>
+    <div class="contact-links">
+      <a id="profile-link" href="https://github.com/charisse" target="_blank">GitHub</a>
+      <a href="https://www.freecodecamp.org/charisse" target="_blank">freeCodeCamp</a>
+      <a href="mailto:charisse@example.com">Email Me</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Charisse Ayaoan | BSIT Web Development</p>
+  </footer>
+
+  <script>
+    // Insert current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('.nav-link').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if(href.startsWith('#')){
+          e.preventDefault();
+          const target = document.querySelector(href);
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
